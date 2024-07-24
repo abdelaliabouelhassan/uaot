@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#272727] pt-6 pb-8 lg:pb-16">
+  <section class="bg-[#272727] pt-6 pb-8 lg:pb-16">
     <div class="w-full max-w-[1437px] mx-auto px-4 space-y-4">
       <form class="flex md:justify-end w-full pb-4">
         <div
@@ -128,7 +128,7 @@
         <Pagination />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

@@ -73,13 +73,16 @@
             </h2>
 
             <div class="flex items-center gap-4">
-              <div class="w-[160px] h-[160px] border border-[#FFDDBB]">
+              <nuxt-link
+                to="/profile"
+                class="w-[160px] h-[160px] border border-[#FFDDBB]"
+              >
                 <img
                   src="/images/Profilepicture_example.png"
                   class="w-full h-full object-cover"
                   alt=""
                 />
-              </div>
+              </nuxt-link>
 
               <div class="flex flex-col items-start space-y-3">
                 <h4

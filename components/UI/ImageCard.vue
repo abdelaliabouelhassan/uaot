@@ -8,7 +8,7 @@
     <img :src="image" class="w-full h-full object-cover" alt="" />
 
     <div
-      class="absolute -bottom-40 left-0 w-full group-hover/card:bottom-10 duration-100"
+      class="absolute -bottom-40 left-0 w-full group-hover/card:bottom-10 duration-300"
     >
       <div class="w-full p-4 space-y-2">
         <h5 class="font-bold font-assistant text-[#FFDDBB] text-xl">

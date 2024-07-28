@@ -1,51 +1,45 @@
 <template>
   <div>
     <!-- Image -->
-    <CollectiveDetails />
+    <CollectiveDetails :items="Items" />
     <!-- About -->
-    <section class="bg-[#171717] pt-8 pb-44">
-      <div class="w-full max-w-[1437px] mx-auto px-4">
-        <div class="w-full flex lg:flex-row flex-col items-start gap-8 pt-6">
-          <div class="w-full space-y-4 pr-8 order-3 lg:order-1">
-            <h2 class="font-assistant font-extrabold text-[#D68637] text-2xl">
-              ABOUT THIS LOOK
-            </h2>
+    <AboutSection :about="About" />
+  </div>
+</template>
 
-            <div class="flex flex-wrap gap-3 items-start">
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#272727] px-4 py-1"
-              >
-                SYLVARI
-              </div>
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#272727] px-4 py-1"
-              >
-                FEMALE
-              </div>
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#272727] px-4 py-1"
-              >
-                LIGHT
-              </div>
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#60814A] px-4 py-1"
-              >
-                GREEN
-              </div>
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#D8848E] px-4 py-1"
-              >
-                PINK
-              </div>
-              <div
-                class="text-lg text-[#FFDDBB] font-assistant bg-[#272727] px-4 py-1"
-              >
-                INFUSION
-              </div>
-            </div>
-
-            <p class="font-assistant text-[#FFDDBB] text-base">
-              This is where it gets interesting. Aerial Finesse lets you
+<script setup>
+import CollectiveDetails from "@/components/partials/CollectiveDetails.vue";
+import AboutSection from "@/components/partials/AboutSection.vue";
+import ProfileCard from "@/components/UI/ProfileCard.vue";
+import Label from "@/components/UI/Label.vue";
+const About = ref({
+  labels: [
+    {
+      text: "SYLVARI",
+      bg: "#272727",
+    },
+    {
+      text: "FEMALE",
+      bg: "#272727",
+    },
+    {
+      text: "LIGHT",
+      bg: "#272727",
+    },
+    {
+      text: "GREEN",
+      bg: "#60814A",
+    },
+    {
+      text: "PINK",
+      bg: "#D8848E",
+    },
+    {
+      text: "INFUSION",
+      bg: "#272727",
+    },
+  ],
+  content: `This is where it gets interesting. Aerial Finesse lets you
               wingflap during a dive (or a climb). We call this “boosting” or
               “speed-diving” since it gives you an extreme increase in speed and
               momentum. A properly executed boost will be visible by having
@@ -61,72 +55,58 @@
               crafting component being the rare drop. Some of these infusions
               can be obtained directly, avoiding the random drop mechanic and,
               partially, extremely high costs. This more direct way of
-              acquisition usually comes with some restrictions.
-            </p>
-          </div>
-          <div
-            class="border border-[#3F3F3F] w-[241px] lg:w-0 lg:h-[241px] order-2"
-          ></div>
-          <div class="w-full max-w-[385px] space-y-4 order-1 lg:order-3">
-            <h2 class="font-assistant font-extrabold text-[#D68637] text-2xl">
-              LOOK BY
-            </h2>
+              acquisition usually comes with some restrictions.`,
+});
 
-            <div class="flex items-center gap-4">
-              <nuxt-link
-                to="/profile"
-                class="w-[160px] h-[160px] border border-[#FFDDBB]"
-              >
-                <img
-                  src="/images/Profilepicture_example.png"
-                  class="w-full h-full object-cover"
-                  alt=""
-                />
-              </nuxt-link>
-
-              <div class="flex flex-col items-start space-y-3">
-                <h4
-                  class="text-[#FFDDBB] font-assistant font-extrabold text-lg"
-                >
-                  Nemain
-                </h4>
-                <span class="text-[#FFDDBB] font-assistant font-normal text-lg"
-                  >IGN: Nemain.5073</span
-                >
-
-                <div class="flex items-center gap-4">
-                  <div class="flex items-center gap-2">
-                    <img
-                      src="/images/icons/active-heart.svg"
-                      class="w-[19px] h-[19px] object-cover"
-                      alt=""
-                    />
-                    <span
-                      class="text-[#FFDDBB] font-assistant font-normal text-lg"
-                      >275</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <img
-                      src="/images/icons/shirt.png"
-                      class="w-[19px] h-[19px] object-cover"
-                      alt=""
-                    />
-                    <span
-                      class="text-[#FFDDBB] font-assistant font-normal text-lg"
-                      >36</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</template>
-
-<script setup>
-import CollectiveDetails from "@/components/partials/CollectiveDetails.vue";
+const Items = ref({
+  images: [
+    "/images/Placeholder3.jpg",
+    "/images/Placeholder6.jpg",
+    "/images/Placeholder1.jpg",
+  ],
+  body: [
+    {
+      image: "/images/equipment_icons/Head_slot.png",
+      colors: ["#FFC8E1", "#DC6E7B", "#C8A6AD", "#8DA27F"],
+    },
+    {
+      image: "/images/equipment_icons/Shoulder_slot.png",
+      colors: ["#FFC8E1", "#DC6E7B", "#C8A6AD"],
+    },
+    {
+      image: "/images/equipment_icons/Chest_slot.png",
+      colors: ["#FFC8E1", "#DC6E7B"],
+    },
+    {
+      image: "/images/equipment_icons/Hand_slot.png",
+      colors: ["#FFC8E1"],
+    },
+    {
+      image: "/images/equipment_icons/Leg_slot.png",
+      colors: ["#FFC8E1", "#DC6E7B", "#C8A6AD", "#8DA27F"],
+    },
+    {
+      image: "/images/equipment_icons/Feet_slot.png",
+      colors: ["#FFC8E1", "#DC6E7B", "#C8A6AD", "#8DA27F"],
+    },
+  ],
+  equipments: [
+    {
+      image: "/images/equipment_icons/Mainhand_slot.png",
+      infusion: "/images/equipment_icons/Infusion_slot.png",
+    },
+    {
+      image: "/images/equipment_icons/Offhand_slot.png",
+      infusion: "/images/equipment_icons/Infusion_slot.png",
+    },
+    {
+      image: "/images/equipment_icons/Mainhand_slot.png",
+      infusion: "/images/equipment_icons/Infusion_slot.png",
+    },
+    {
+      image: "/images/equipment_icons/Offhand_slot.png",
+      infusion: "/images/equipment_icons/Infusion_slot.png",
+    },
+  ],
+});
 </script>

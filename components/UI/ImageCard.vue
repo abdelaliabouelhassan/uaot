@@ -88,6 +88,7 @@ const ChangeImages = () => {
 const CleanTl = () => {
   clearInterval(tl.value);
   tl.value = null;
+  currentIndex.value = 0;
 };
 
 onMounted(() => {

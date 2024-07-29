@@ -7,10 +7,13 @@
     <div class="absolute top-2 left-2">
       <img :src="type" class="w-7 h-7 object-cover" alt="" />
     </div>
+
     <img
-      :src="images[currentIndex]"
-      class="w-full h-full object-cover"
-      alt=""
+      v-for="(image, index) in images"
+      :key="index"
+      :src="image"
+      :class="{ show: index === currentIndex, hide: index !== currentIndex }"
+      class="w-full h-full object-cover image duration-300"
     />
 
     <div
@@ -84,6 +87,7 @@ const ChangeImages = () => {
 
 const CleanTl = () => {
   clearInterval(tl.value);
+  tl.value = null;
 };
 
 onMounted(() => {
@@ -94,5 +98,26 @@ onMounted(() => {
 <style scoped>
 .textShdow {
   text-shadow: 1px 1px 1px #00000059;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(1);
+}
+
+.image.show {
+  opacity: 1;
+  transform: scale(1.1); /* Adjust the scale value for zoom effect */
+}
+
+.image.hide {
+  opacity: 0;
+  transform: scale(1);
 }
 </style>
